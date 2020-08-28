@@ -6,6 +6,7 @@
 	<title>MENU</title>
 	<link rel="stylesheet" href="./main.css">
 	<link rel="stylesheet" href="./fonts.css">
+	
 </head>
 <body>
 	<div class="info">
@@ -27,6 +28,14 @@
 		</nav>
 		</div>
 	</header>
+
+  <ul class="social">
+		<li><a href="" class="icon-facebook"></a></li>
+		<li><a href="" class="icon-instagram"></a></li>
+		<li><a href="" class="icon-twitter"></a></li>
+		
+	</ul>
+
 
 	<section>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni at accusamus porro quidem ipsum dolorum neque beatae, consectetur delectus cum deleniti ipsam hic asperiores ut, eos nihil, voluptate voluptates vitae.</p>
@@ -59,26 +68,28 @@
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur optio, dignissimos nihil dolor asperiores molestias repellat quibusdam sapiente laborum, inventore consectetur ab nesciunt fuga ipsa officiis nulla voluptas necessitatibus consequuntur.</p>
 	</section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  
 
-	<script>
-		$(function(){
-			$('#menu').on('click',function(){
-				$('nav').toggleClass('show')
-			})
+  <script>
+		const nav = 	document.querySelector('nav')
 
+  	 document.getElementById('menu').addEventListener('click',()=>{
+		  	nav.classList.toggle('show');
+				document.getElementById('menu').style.cursor='pointer'
+		 })
 
-	     var altura = $('nav').offset().top;
-			
-			$(window).on('scroll', function(){
-				if ( $(window).scrollTop() > altura ){
-					$('nav').addClass('fixed');
-				} else {
-					$('nav').removeClass('fixed');
-				}
-			});
-		 
-		});
-
-	</script>
+		
+		 $(function(){
+			 const altura = $('nav').offset().top;
+			 $(window).scroll(function(){
+				 if( $(window).scrollTop() > altura){
+				  	$('nav').addClass('fixed');
+				 }else{
+				  	$('nav').removeClass('fixed');
+				 }
+			 })
+		 })
+  </script>
+	
 </body>
 </nav
